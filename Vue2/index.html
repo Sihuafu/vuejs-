@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用v-model</title>
+</head>
+<body>
+<div id="app">
+    <form>
+        <div class="error" v-show="!message">你还没有填写任何内容</div>
+        <textarea v-model="message"></textarea>
+        <button>提交</button>
+    </form>
+    <pre>
+        {{$data|json}}
+    </pre>
+</div>
+<script src="../vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: ''
+        }
+    })
+</script>
+</body>
+</html>

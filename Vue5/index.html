@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed应用场景</title>
+</head>
+<body>
+<div id="app">
+    Level {{ level }}
+</div>
+
+<script src="http://cdn.bootcss.com/vue/1.0.24/vue.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        points: 300   // 定义当前经验值
+    },
+    computed: {
+    level: function (){
+        if (this.points <= 200) {
+            return '普通会员'
+        }
+        return 'VIP会员'
+    }
+}
+})
+</script>
+</body>
+</html>

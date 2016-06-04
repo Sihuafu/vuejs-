@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue组件化</title>
+</head>
+<body>
+<div id="app">
+    <custom name="赞"></custom>
+    <custom name="踩"></custom>
+</div>
+<template id="template">
+    <h1>{{name}}</h1>
+    <button @click = "count += 1">{{count}}</button>
+</template>
+<script src="../vue.js"></script>
+<script>
+    Vue.component('custom', {
+        template:'#template',
+        props:['name'],
+        data: function() {
+            return {count:0}
+        }
+    });
+    new Vue({
+        el:'#app'
+    })
+</script>
+</body>
+</html>
